@@ -3,8 +3,9 @@ import 'package:chat_app/Items/constans.dart';
 import 'package:chat_app/Items/custom_textfield.dart';
 import 'package:flutter/material.dart';
 
-class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+class RegisterPage extends StatelessWidget {
+  const RegisterPage({super.key});
+  
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +33,7 @@ class LoginPage extends StatelessWidget {
                 Padding(
                   padding: EdgeInsets.only(left: 8),
                   child: Text(
-                    "Login",
+                    "Register",
                     style: TextStyle(
                       fontSize: 32,
                       color: Colors.white,
@@ -63,7 +64,7 @@ class LoginPage extends StatelessWidget {
               height: 8,
             ),
             Button(
-              name: "LOGIN",
+              name: "REGISTER",
               color: basecolor,
             ),
             Row(
@@ -76,19 +77,20 @@ class LoginPage extends StatelessWidget {
                     fontSize: 16,
                   ),
                 ),
-                GestureDetector(
-                  onTap: (){
-                    Navigator.pushNamed(context, "Register");
-                    },
-                  child: const Text(
-                      "Register",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold
-                      ),
-                    ),
-                ),
+                 GestureDetector(
+                   onTap: () {
+                     Navigator.pop(context);
+                   },
+                   child: const 
+                      Text(
+                        "Login",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold
+                        ),
+                      ),   
+                 ),
                 
               ],
             ),

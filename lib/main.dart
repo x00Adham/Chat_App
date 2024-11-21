@@ -1,12 +1,15 @@
+import 'package:chat_app/Screens/Register.dart';
 import 'package:chat_app/Screens/login.dart';
 import 'package:flutter/material.dart';
-import 'package:device_preview/device_preview.dart';
+import "package:device_preview/device_preview.dart";
 
 void main() {
   runApp( 
     DevicePreview(
-    builder: (context) => const ChatApp(), // Wrap your app
-  ),);
+      enabled: true,
+      builder: (context) => const ChatApp(),
+    )
+  );
 }
 
 class ChatApp extends StatelessWidget {
@@ -14,9 +17,13 @@ class ChatApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: LoginPage(),
+      routes: {
+        "Login" : (context)=> const LoginPage(),
+        "Register" : (context)=> const RegisterPage(),
+      },
+      initialRoute: "Login",
     );
   }
 }

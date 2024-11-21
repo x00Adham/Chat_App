@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class Custuim_textfeild extends StatelessWidget {
-  const Custuim_textfeild({super.key,required this.name}); 
+class CustomTextfield extends StatelessWidget {
+  const CustomTextfield({super.key,required this.name}); 
   final String name;
 
   @override
