@@ -1,10 +1,12 @@
 import 'package:chat_app/Items/button.dart';
 import 'package:chat_app/Items/constans.dart';
 import 'package:chat_app/Items/custom_textfield.dart';
+import 'package:chat_app/Screens/Register.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
+  final String id = "Login";
 
   @override
   Widget build(BuildContext context) {
@@ -20,12 +22,15 @@ class LoginPage extends StatelessWidget {
             ),
             Image.asset('assets/images/scholar.png'),
             const Text(
-              "Scholar Chat",
+              "Chats",
               style: TextStyle(
                 fontSize: 32,
                 color: Colors.white,
                 fontFamily: "Pacifico",
               ),
+            ),
+            const SizedBox(
+              height: 16,
             ),
             const Row(
               children: [
@@ -66,6 +71,9 @@ class LoginPage extends StatelessWidget {
               name: "LOGIN",
               color: basecolor,
             ),
+            const SizedBox(
+              height: 8,
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -78,7 +86,7 @@ class LoginPage extends StatelessWidget {
                 ),
                 GestureDetector(
                   onTap: (){
-                    Navigator.pushNamed(context, "Register");
+                    Navigator.pushNamed(context, const RegisterPage().id);
                     },
                   child: const Text(
                       "Register",

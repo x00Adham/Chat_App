@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 
 class RegisterPage extends StatelessWidget {
   const RegisterPage({super.key});
+  final String id = "Register";
   
 
   @override
@@ -21,12 +22,15 @@ class RegisterPage extends StatelessWidget {
             ),
             Image.asset('assets/images/scholar.png'),
             const Text(
-              "Scholar Chat",
+              "Chat",
               style: TextStyle(
                 fontSize: 32,
                 color: Colors.white,
                 fontFamily: "Pacifico",
               ),
+            ),
+            const SizedBox(
+              height: 16,
             ),
             const Row(
               children: [
@@ -66,6 +70,9 @@ class RegisterPage extends StatelessWidget {
             Button(
               name: "REGISTER",
               color: basecolor,
+            ),
+            const SizedBox(
+              height: 8,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
