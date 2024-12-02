@@ -1,7 +1,7 @@
 import 'package:chat_app/Items/button.dart';
 import 'package:chat_app/Items/constans.dart';
 import 'package:chat_app/Items/custom_textfield.dart';
-import 'package:chat_app/Screens/Register.dart';
+import 'package:chat_app/Screens/register.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatelessWidget {
