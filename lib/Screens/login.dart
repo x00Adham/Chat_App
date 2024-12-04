@@ -1,4 +1,4 @@
-import 'package:chat_app/Items/button.dart';
+import 'package:chat_app/Items/custom_button.dart';
 import 'package:chat_app/Items/constans.dart';
 import 'package:chat_app/Items/custom_textfield.dart';
 import 'package:chat_app/Screens/register.dart';
@@ -49,8 +49,8 @@ class LoginPage extends StatelessWidget {
             const SizedBox(
               height: 8,
             ),
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 8),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8),
               child: CustomTextfield(
                 name: "Email",
               ),
@@ -58,8 +58,8 @@ class LoginPage extends StatelessWidget {
             const SizedBox(
               height: 8,
             ),
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 8),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8),
               child: CustomTextfield(
                 name: "Password",
               ),
@@ -67,7 +67,7 @@ class LoginPage extends StatelessWidget {
             const SizedBox(
               height: 8,
             ),
-            Button(
+            CustomButton(
               name: "LOGIN",
               color: basecolor,
             ),
@@ -86,7 +86,7 @@ class LoginPage extends StatelessWidget {
                 ),
                 GestureDetector(
                   onTap: (){
-                    Navigator.pushNamed(context, const RegisterPage().id);
+                    Navigator.pushNamed(context,   RegisterPage().id);
                     },
                   child: const Text(
                       "Register",

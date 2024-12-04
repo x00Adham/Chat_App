@@ -1,13 +1,14 @@
-import 'package:chat_app/Items/button.dart';
+import 'package:chat_app/Items/custom_button.dart';
 import 'package:chat_app/Items/constans.dart';
 import 'package:chat_app/Items/custom_textfield.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class RegisterPage extends StatelessWidget {
-  const RegisterPage({super.key});
+   RegisterPage({super.key});
   final String id = "Register";
-  
-
+  String? email;
+  String? pass;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,25 +50,36 @@ class RegisterPage extends StatelessWidget {
             const SizedBox(
               height: 8,
             ),
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 8),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8),
               child: CustomTextfield(
                 name: "Email",
+                onChanged: (data) {
+                  email = data;
+                }
               ),
             ),
             const SizedBox(
               height: 8,
             ),
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 8),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8),
               child: CustomTextfield(
+                onChanged: (data){
+                  pass = data;
+                },
                 name: "Password",
               ),
             ),
             const SizedBox(
               height: 8,
             ),
-            Button(
+            CustomButton(
+              onTap: () async{
+                var auth = FirebaseAuth.instance;
+               UserCredential user = await auth.createUserWithEmailAndPassword(email: email!, password: pass!);
+               print(user.user?.displayName);
+              },
               name: "REGISTER",
               color: basecolor,
             ),
